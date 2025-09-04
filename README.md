@@ -1,8 +1,5 @@
 Project Mitra - BCCL Digital Assistant
-<p align="center">
-<img src="project_mitra_frontend/public/logo.png" alt="BCCL Logo" width="150">
 </p>
-<p align="center">
 A modern digital assistant website for Bharat Coking Coal Limited (BCCL), featuring an interactive map, a multi-page React frontend, and a smart Python/Flask backend with a Gemini-powered AI chatbot.
 </p>
 
