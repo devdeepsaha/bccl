@@ -50,13 +50,47 @@ const OperationsMap = () => {
         setPosition({ x: constrainedX, y: constrainedY });
     };
 
-    const handleMouseUpOrLeave = () => {
+    const handlePanEnd = () => {
         setIsDragging(false);
         if (mapRef.current) {
             mapRef.current.style.cursor = 'grab';
         }
     };
     
+    const handleTouchStart = (e) => {
+        if (zoom > 1) {
+            setIsDragging(true);
+            const touch = e.touches[0];
+            startPos.current = { x: touch.clientX - position.x, y: touch.clientY - position.y };
+        }
+    };
+
+    const handleTouchMove = (e) => {
+        if (!isDragging || zoom <= 1) return;
+
+        // Prevent default behavior to avoid scrolling the page
+        e.preventDefault(); 
+        
+        const touch = e.touches[0];
+        const x = touch.clientX - startPos.current.x;
+        const y = touch.clientY - startPos.current.y;
+        
+        // Calculate the boundaries to constrain panning
+        const mapWidth = mapRef.current.offsetWidth;
+        const mapHeight = mapRef.current.offsetHeight;
+        const maxX = (mapWidth * zoom - mapWidth) / 2;
+        const maxY = (mapHeight * zoom - mapHeight) / 2;
+
+        const constrainedX = Math.max(Math.min(x, maxX), -maxX);
+        const constrainedY = Math.max(Math.min(y, maxY), -maxY);
+        
+        setPosition({ x: constrainedX, y: constrainedY });
+    };
+
+    const handleTouchEndOrCancel = () => {
+        setIsDragging(false);
+    };
+
     useEffect(() => {
         if (zoom === 1) {
             setPosition({ x: 0, y: 0 });
@@ -77,8 +111,11 @@ const OperationsMap = () => {
                         ref={mapRef}
                         onMouseDown={handleMouseDown}
                         onMouseMove={handleMouseMove}
-                        onMouseUp={handleMouseUpOrLeave}
-                        onMouseLeave={handleMouseUpOrLeave}
+                        onMouseUp={handlePanEnd}
+                        onMouseLeave={handlePanEnd}
+                        onTouchStart={handleTouchStart}
+                        onTouchMove={handleTouchMove}
+                        onTouchEnd={handleTouchEndOrCancel}
                     >
                         <div className="zoom-controls">
                             <button onClick={handleZoomIn}>+</button>
