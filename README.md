@@ -85,4 +85,8 @@ npm install
 
 Run the development server:
 
+<<<<<<< HEAD
 npm start
+=======
+npm start
+>>>>>>> 8663d466af1c5f0f0d8f2b8824d2c89d40b46fe8
