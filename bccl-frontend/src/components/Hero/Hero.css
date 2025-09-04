@@ -1,0 +1,169 @@
+.hero {
+  background-color: #333;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("https://images.unsplash.com/photo-1575853518134-c49a6a86c35a?q=80&w=2070&auto=format&fit=crop");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  color: #fff;
+  aspect-ratio: 16 / 11;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative; /* This is crucial for absolute positioning of children */
+  overflow: hidden; /* Ensures logo doesn't peek out */
+}
+
+.hero-logo {
+  /* --- NEW POSITIONING STYLES --- */
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+
+  width: 200px;
+  height: auto;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.hero-content {
+  /* This container holds the centered text and button */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  padding-top: calc(250px + 1.5rem);
+  padding-bottom: 90px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin-bottom: 2rem;
+}
+
+.hero-btn {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(228, 54, 54, 0.4);
+}
+
+/* --- Mobile Responsiveness --- */
+
+@media (max-width: 768px) {
+  .hero {
+    aspect-ratio: 1;
+    padding: 1rem;
+    padding-top: 1px;
+  }
+
+  .hero-logo {
+    width: 130px;
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+
+  .hero-content {
+    /* Adjust padding to account for logo height + its top padding */
+    padding-top: calc(100px + 1.5rem); /* Logo height + top offset */
+    padding-bottom: 10px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    max-width: 90%;
+  }
+
+  .hero-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero {
+    aspect-ratio: 9/10;
+    padding: 1rem;
+    padding-top: 1px;
+  }
+
+  .hero-logo {
+    width: 130px;
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+
+  .hero-content {
+    /* Adjust padding to account for logo height + its top padding */
+    padding-top: calc(100px + 1.5rem); /* Logo height + top offset */
+    padding-bottom: 10px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    max-width: 90%;
+  }
+
+  .hero-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-logo {
+    width: 100px;
+    top: -0.1rem;
+    left: -0.1rem;
+  }
+
+  .hero-content {
+    /* Further adjust padding for smaller logo and top offset */
+    padding-top: calc(80px + 1rem); /* Smaller logo height + top offset */
+    padding-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-btn {
+    padding: 0.6rem 1.2rem;
+  }
+}

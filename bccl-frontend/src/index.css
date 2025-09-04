@@ -1,0 +1,68 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lato:wght@400;700&display=swap');
+
+/* CSS Variables (Black/Red/Cream Palette) */
+:root {
+    --primary-color: #000000; /* Black */
+    --secondary-color: #E43636; /* Red */
+    --accent-color: #E43636; /* Red */
+    --text-light: #F6EFD2; /* Cream */
+    --text-dark: #000000; /* Black */
+    --bg-light: #FFFFFF; /* White */
+    --bg-grey: #F6EFD2; /* Cream */
+    --beige: #E2DDB4;
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.7;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--primary-color);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #777;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}

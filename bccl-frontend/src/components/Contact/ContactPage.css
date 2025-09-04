@@ -1,0 +1,206 @@
+.contact-page {
+    padding: 4rem 2rem;
+    background-color: #f4f7f6;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.page-header h1 {
+    font-size: 2.8rem;
+    color: var(--primary-color);
+}
+
+.page-header p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Give more space to directory */
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+
+.contact-main-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    position: sticky;
+    top: 120px;
+}
+
+.corporate-info-card, .contact-form-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    padding: 2.5rem;
+}
+
+.corporate-info-card .info-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+.corporate-info-card .info-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+.corporate-info-card .info-item svg {
+    color: var(--secondary-color);
+    flex-shrink: 0;
+}
+.corporate-info-card .info-item span,
+.corporate-info-card .info-item a {
+    color: #555;
+    text-decoration: none;
+}
+.corporate-info-card .info-item a:hover {
+    color: var(--secondary-color);
+}
+
+
+.contact-form-card h3 {
+    margin-top: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: #c42a2a;
+    transform: translateY(-2px);
+}
+
+
+.personnel-directory .card-title {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-color);
+    margin: 0 0 2rem 0;
+    font-size: 1.5rem;
+}
+
+.personnel-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.personnel-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.personnel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.personnel-card-header {
+    padding: 1rem 1.5rem;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.personnel-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.personnel-designation {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 0.25rem 0 0 0;
+}
+
+.personnel-card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.personnel-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+}
+.personnel-contact-item svg {
+    flex-shrink: 0;
+    color: #888;
+}
+
+.personnel-contact-item span, .personnel-contact-item a {
+    color: #555;
+    word-break: break-all;
+    text-decoration: none;
+}
+.personnel-contact-item a:hover {
+    color: var(--secondary-color);
+}
+
+
+@media (max-width: 992px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+    .contact-main-panel {
+        position: static;
+        order: 2; /* Move form below directory on mobile */
+    }
+    .personnel-directory {
+        order: 1;
+    }
+}

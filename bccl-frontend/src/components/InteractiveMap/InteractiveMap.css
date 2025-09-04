@@ -1,0 +1,200 @@
+.map-section {
+    background-color: #e8e8e1;
+    padding: 6rem 2rem;
+}
+
+.map-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 3rem auto 0 auto;
+    align-items: flex-start;
+}
+
+.map-container {
+    position: relative;
+    flex: 2;
+    min-width: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    background-color: #ccc;
+}
+
+.pannable-map {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-out;
+}
+
+.pannable-map img {
+    display: block;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+}
+
+.zoom-controls {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.zoom-controls button {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3px;
+}
+
+.zoom-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.info-panel {
+    flex: 1;
+    min-width: 300px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-panel-placeholder {
+    color: #777;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-panel-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.info-panel-content h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.25rem;
+    font-family: 'Poppins', sans-serif;
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.75rem;
+}
+
+.info-panel-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #333;
+    flex-grow: 1;
+}
+
+.learn-more-btn {
+    display: block;
+    margin-top: 1.5rem;
+    padding: 0.75rem;
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.learn-more-btn:hover {
+    background-color: #c42a2a;
+    transform: translateY(-2px);
+}
+
+.map-point {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: crosshair; /* CHANGED THIS LINE */
+    z-index: 10;
+}
+
+.map-point .dot {
+    width: calc(18px / var(--zoom-level, 1));
+    height: calc(18px / var(--zoom-level, 1));
+    border-width: calc(3px / var(--zoom-level, 1));
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    border-style: solid;
+    border-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.map-point.active .dot {
+    transform: scale(1.5);
+}
+
+.default-label {
+    position: absolute;
+    top: calc(20px / var(--zoom-level, 1));
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    padding: calc(4px / var(--zoom-level, 1)) calc(10px / var(--zoom-level, 1));
+    border-radius: 5px;
+    font-size: calc(12px / var(--zoom-level, 1));
+    font-weight: 500;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0.8;
+    user-select: none;
+}
+
+.map-point.active .default-label {
+    opacity: 1;
+    transform: translateX(-50%) translateY(calc(4px / var(--zoom-level, 1)));
+}
+
+@media (max-width: 992px) {
+    .map-layout {
+        flex-direction: column; /* Stack map and info panel vertically */
+    }
+
+    .map-container {
+        min-width: 100%; /* Allow map to take full width */
+    }
+
+    .info-panel {
+        min-width: 100%;
+        height: auto; /* Let height be automatic */
+        min-height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .map-section {
+        padding: 4rem 1rem;
+    }
+}

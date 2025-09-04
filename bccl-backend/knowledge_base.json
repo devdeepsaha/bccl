@@ -1,0 +1,32 @@
+{
+  "faqs": [
+    {
+      "tags": ["jobs", "recruitment", "vacancy", "apply", "career","job"],
+      "answer": "You can find all current job openings and apply through the 'Careers' section on the official BCCL website. Keep an eye out for official notifications."
+    },
+    {
+      "tags": ["cmd", "chairman", "head"],
+      "answer": "The current Chairman cum Managing Director (CMD) of BCCL can be found on the 'About Us' page of the official website."
+    },
+    {
+      "tags": ["tenders", "contracts", "tender"],
+      "answer": "All open tenders are published on the government's e-procurement portal and are linked from our 'Tenders' page."
+    },
+    {
+      "tags": ["address", "contact", "location", "headquarters"],
+      "answer": "BCCL's headquarters is located at Koyla Bhawan, Koyla Nagar, Dhanbad, Jharkhand - 826005."
+    },
+    {
+      "tags": ["csr", "community", "social"],
+      "answer": "BCCL is committed to Corporate Social Responsibility (CSR) and undertakes various projects in education, healthcare, and community infrastructure. More details are on our website."
+    },
+    {
+      "tags": ["hello", "hi", "hey"],
+      "answer": "Hello! I am CoalBot, the BCCL digital assistant. How can I help you today?"
+    },
+    {
+      "tags": ["bye", "thanks", "thank you"],
+      "answer": "You're welcome! Feel free to ask if you have any other questions. Have a great day!"
+    }
+  ]
+}

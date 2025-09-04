@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            keyframes: {
+              pulse: {
+                "0%, 100%": {
+                  transform: "scale(1)",
+                  "box-shadow": "0 0 0 0 rgba(245, 158, 11, 0.7)",
+                },
+                "50%": {
+                  transform: "scale(1.1)",
+                  "box-shadow": "0 0 0 10px rgba(245, 158, 11, 0)",
+                },
+              },
+              marquee: {
+                "0%": { transform: "translateX(100%)" },
+                "100%": { transform: "translateX(-100%)" },
+              },
+            },
+            animation: {
+              pulse: "pulse 2s infinite",
+              marquee: "marquee 30s linear infinite",
+            },
+          },
+        },
+      };
+    </script>
+    <title>BCCL</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

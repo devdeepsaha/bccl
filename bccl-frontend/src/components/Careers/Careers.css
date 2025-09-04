@@ -1,0 +1,198 @@
+.careers-page {
+  padding: 4rem 2rem;
+  background-color: #f4f7f6; /* A soft, clean background */
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-header h1 {
+  font-size: 2.2rem !important;
+  color: var(--primary-color);
+  font-family: "Poppins", sans-serif;
+}
+
+.page-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Styles for the filter tabs */
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  color: var(--primary-color);
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  background-color: #e9ecef;
+  border-color: #ccc;
+}
+
+.tab-btn.active {
+  background-color: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.career-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.career-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.career-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: flex-start;
+  padding: 1.5rem;
+  border-left: 5px solid #ccc; /* Default color */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.career-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+  font-size: 1.5rem;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-category {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #888;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem 0;
+}
+
+.card-title {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.card-date {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.new-badge {
+  background-color: var(--secondary-color);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.no-results-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #777;
+  font-size: 1.1rem;
+  padding: 2rem;
+}
+
+/* --- Mobile Responsiveness --- */
+
+/* General Mobile Styles (larger mobile screens first) */
+@media (max-width: 768px) {
+  .careers-page {
+    padding: 3rem 1rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.2rem; /* Adjusted size */
+  }
+
+  .page-header p {
+    font-size: 1rem;
+  }
+
+  .tab-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .career-cards-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 0.95rem;
+  }
+}
+
+/* Specific Styles for Very Small Screens (comes AFTER the 768px styles) */
+@media (max-width: 360px) {
+  .page-header h1 {
+    font-size: 1.8rem; /* New, smaller size for the smallest screens */
+  }
+
+  .career-card {
+    flex-direction: column;
+  }
+
+  .card-icon {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .card-footer {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    align-items: flex-start;
+  }
+}
